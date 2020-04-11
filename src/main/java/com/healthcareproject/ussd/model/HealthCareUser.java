@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
-@Entity(name="healthcare-app")
+@Entity
 @Table(name="healthuser")
 public class HealthCareUser {
 	

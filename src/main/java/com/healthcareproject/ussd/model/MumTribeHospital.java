@@ -1,5 +1,7 @@
 package com.healthcareproject.ussd.model;
 
+import java.util.Arrays;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +19,16 @@ public class MumTribeHospital {
 	
 	@Column(name="hospita-address")
 	private HospitalAddress address;
+	
+	private String[] healthProfessionals;
+
+	public MumTribeHospital(int id, String[] hospitalName, HospitalAddress address, String[] healthProfessionals) {
+		super();
+		this.id = id;
+		this.hospitalName = hospitalName;
+		this.address = address;
+		this.healthProfessionals = healthProfessionals;
+	}
 
 	public int getId() {
 		return id;
@@ -40,6 +52,20 @@ public class MumTribeHospital {
 
 	public void setAddress(HospitalAddress address) {
 		this.address = address;
+	}
+
+	public String[] getHealthProfessionals() {
+		return healthProfessionals;
+	}
+
+	public void setHealthProfessionals(String[] healthProfessionals) {
+		this.healthProfessionals = healthProfessionals;
+	}
+
+	@Override
+	public String toString() {
+		return "MumTribeHospital [id=" + id + ", hospitalName=" + Arrays.toString(hospitalName) + ", address=" + address
+				+ ", healthProfessionals=" + Arrays.toString(healthProfessionals) + "]";
 	}
    
 
